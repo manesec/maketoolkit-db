@@ -10,12 +10,12 @@ def Run():
     for downloadLink,savePath in files:
         print("[BaseDB] Downloading %s ... " % (os.path.basename(savePath)))
         absSavePath = "/var/lib/mkt/Res/Data/BaseDB/" + savePath
-        
+
         from pathlib import Path
         path = Path(os.path.dirname(absSavePath))
         path.mkdir(parents=True, exist_ok=True)
 
-        WgetDownloadFile(downloadLink,absSavePath)
+        WgetDownloadFile(downloadLink,absSavePath,True)
 
 def WgetDownloadFile(url,local_path,quiet = False):
     import os

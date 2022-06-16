@@ -3,19 +3,23 @@ def Run():
     os.chdir("/var/lib/mkt/Res/Data/BaseDB/")
     print("[BaseDB] Initing ...")
     
-    files = [
-        ["https://raw.githubusercontent.com/AidenPearce369/OSCP-Notes/main/README.md","Notes/OSCP_Note.md"]
-    ]
+    with open("List","rw") as file:
+        for line in file:
+            line = line.strip()
+            if (line == ""):
+                continue
+            downloadLink,savePath = line.split("||")
+            downloadLink = downloadLink.strip()
+            savePath = savePath.strip()
 
-    for downloadLink,savePath in files:
-        print("[BaseDB] Downloading %s ... " % (os.path.basename(savePath)))
-        absSavePath = "/var/lib/mkt/Res/Data/BaseDB/" + savePath
+            print("[BaseDB] Downloading %s ... " % (os.path.basename(savePath)))
+            absSavePath = "/var/lib/mkt/Res/Data/BaseDB/" + savePath
 
-        from pathlib import Path
-        path = Path(os.path.dirname(absSavePath))
-        path.mkdir(parents=True, exist_ok=True)
+            from pathlib import Path
+            path = Path(os.path.dirname(absSavePath))
+            path.mkdir(parents=True, exist_ok=True)
 
-        WgetDownloadFile(downloadLink,absSavePath,True)
+            WgetDownloadFile(downloadLink,absSavePath,True)
 
 def WgetDownloadFile(url,local_path,quiet = False):
     import os

@@ -3,7 +3,7 @@ def Run():
     os.chdir("/var/lib/mkt/Res/Data/BaseDB/")
     print("[BaseDB] Initing ...")
     
-    with open("List","rw") as file:
+    with open("List","r") as file:
         for line in file:
             line = line.strip()
             if (line == ""):

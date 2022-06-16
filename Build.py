@@ -6,7 +6,7 @@ def Run():
     with open("List","r") as file:
         for line in file:
             line = line.strip()
-            if (line == ""):
+            if ((line == "") or (line[0] == "#")):
                 continue
             downloadLink,savePath = line.split("||")
             downloadLink = downloadLink.strip()

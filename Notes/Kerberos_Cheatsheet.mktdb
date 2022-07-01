@@ -5,7 +5,7 @@ def Setup():
     os.chdir(Base_Path)
 
     Download_array = [
-        ["https://raw.githubusercontent.com/attackercan/regexp-security-cheatsheet/master/README.md","Regexp_Bypass.md"]
+        ["https://gist.githubusercontent.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a/raw/9aba07c21448afcb7fc0b51e87e617f722e24174/kerberos_attacks_cheatsheet.md","Kerberos_Cheatsheet.md"]
     ]
     
     for a,b in Download_array:

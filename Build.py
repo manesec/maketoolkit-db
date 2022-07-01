@@ -1,29 +1,28 @@
 def Run():
+    max_thread = 5
+
     import os
     os.chdir("/var/lib/mkt/Res/Data/BaseDB/")
     print("[BaseDB] Initing ...")
-    
-    with open("List","r") as file:
-        for line in file:
-            line = line.strip()
-            if ((line == "") or (line[0] == "#")):
-                continue
-            downloadLink,savePath = line.split("||")
-            downloadLink = downloadLink.strip()
-            savePath = savePath.strip()
 
-            print("[BaseDB] Downloading %s ... " % (os.path.basename(savePath)))
-            absSavePath = "/var/lib/mkt/Res/Data/BaseDB/" + savePath
+    from concurrent.futures import ThreadPoolExecutor, as_completed
 
-            from pathlib import Path
-            path = Path(os.path.dirname(absSavePath))
-            path.mkdir(parents=True, exist_ok=True)
+    def sub_run(path):
+        import subprocess,os
+        base_name = os.path.basename(path)
+        print("[%s] Running ..." % (base_name))
+        subprocess.getoutput("python3 '%s'" % (path))
+        os.remove(path)
+        return base_name
 
-            WgetDownloadFile(downloadLink,absSavePath,True)
+    executor = ThreadPoolExecutor(max_workers=max_thread)
+    task_pool = []
+    for path,sub_path,files in os.walk("/var/lib/mkt/Res/Data/BaseDB/"):
+        for file in files :
+            if (file[-(len(".mktdb")):] == ".mktdb") :
+                task_pool.append(executor.submit(sub_run,(path + "/" + file)))
 
-def WgetDownloadFile(url,local_path,quiet = False):
-    import os
-    if os.path.exists(local_path):
-        os.remove(local_path)
-    quiet = "--quiet" if quiet else ""
-    os.system('wget "%s" %s -O "%s"' % (url,quiet,local_path))
+    for status in as_completed(task_pool):
+        print("[%s] Done!" % (status.result()))
+
+    print("[BaseDB] All finished!")

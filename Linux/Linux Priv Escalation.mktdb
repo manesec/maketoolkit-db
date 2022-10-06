@@ -1,0 +1,21 @@
+
+def Setup():
+    import os
+    Base_Path = os.path.split(os.path.realpath(__file__))[0]
+    os.chdir(Base_Path)
+
+    Download_array = [
+        ["https://raw.githubusercontent.com/frizb/Linux-Privilege-Escalation/master/README.md","Linux Priv Escalation.md"]
+    ]
+    
+    for a,b in Download_array:
+        WgetDownloadFile(a,b,True)
+
+def WgetDownloadFile(url,local_path,quiet = False):
+    import os
+    if os.path.exists(local_path):
+        os.remove(local_path)
+    quiet = "--quiet" if quiet else ""
+    os.system('wget "%s" %s -O "%s"' % (url,quiet,local_path))
+
+Setup()

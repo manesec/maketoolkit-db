@@ -10,7 +10,7 @@ def Run():
     def sub_run(path):
         import subprocess,os
         base_name = os.path.basename(path)
-        print("[%s] Running ..." % (base_name))
+        print("[%s] Fetching ..." % (base_name))
         subprocess.getoutput("python3 '%s'" % (path))
         os.remove(path)
         return base_name
@@ -23,6 +23,7 @@ def Run():
                 task_pool.append(executor.submit(sub_run,(path + "/" + file)))
 
     for status in as_completed(task_pool):
-        print("[%s] Done!" % (status.result()))
+        #print("[%s] Done!" % (status.result()))
+        pass
 
     print("[BaseDB] All finished!")

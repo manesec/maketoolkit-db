@@ -10,6 +10,10 @@ Query user:`(objectClass=user)` or `(userPrincipalName=*)`
 
 Query group: `(objectClass=group)`
 
+## Note
+
+User login may use ldap format like `mane@manesec.local`.
+
 ## User Naming Attributes
 
 - [userPrincipalName](https://docs.microsoft.com/en-us/windows/win32/ad/naming-properties#userprincipalname) — the logon name for the user

@@ -4,7 +4,7 @@ Write by manesec.
 
 ## Tools: smbcacls 
 
-Using smbcacls to check permission, `smbmap` may not display correctly.
+Using `smbcacls` to check permission, `smbmap` may not display correctly.
 
 For example: If you want to check `\\10.129.103.152\Department Shares\Users\Public` , 
 
@@ -32,5 +32,28 @@ $smbmap -u 'guest' -p '' -H 10.129.103.152 -R 'Department Shares/Users/Public'
 ```
 
 You can see `smbcacls` show that EVERYONE have full access, but `smbmap` show `READ ONLY` permissions.
+
+## About impacket-smbserver
+
+Sometimes impacket-smbserver does not work very well (you can test it in HTB machine: Sniper), which mean you can start smbserver via smbd.
+
+1. Edit /etc/samba/smb.conf
+2. Copy and paste
+3. save and start service
+
+Config like this: 
+
+```bash
+[mane]
+   comment = Mane
+   path = /srv/smb
+   browseable = yes
+   read only = no
+   guest ok = yes
+```
+
+Test it in `smbclient -L <IP>`.
+
+# Reference
 
 Ref: https://www.samba.org/samba/docs/current/man-html/smbcacls.1.html

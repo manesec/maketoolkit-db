@@ -6,7 +6,7 @@ def Setup():
     os.chdir(Base_Path)
 
     Download_array = [
-        ["https://raw.githubusercontent.com/C-Sto/gosecretsdump/master/README.md","Gosecretsdump.md"]
+        ["https://raw.githubusercontent.com/Greenwolf/ntlm_theft/master/README.md","NtlmTheft.md"]
     ]
     
     for a,b in Download_array:

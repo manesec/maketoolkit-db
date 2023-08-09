@@ -16,6 +16,8 @@ $pass = ConvertTo-SecureString '<PASSWORD>' -AsPlainText -Force
 $cred = New-Object System.Management.Automation.PSCredential("<USERNAME>", $pass)
 Invoke-Command -Computer $(hostname) -ScriptBlock { whoami } -Credential $cred
 
+# Use ConfigurationName (Like config)
+Invoke-Command -Computer $(hostname) -ScriptBlock { whoami } -Credential $cred -ConfigurationName dc_manage
 ```
 
 # Reference

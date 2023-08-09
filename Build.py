@@ -1,5 +1,5 @@
 def Run():
-    max_thread = 5
+    max_thread = 3
 
     import os
     os.chdir("/var/lib/mkt/Res/Data/BaseDB/")

@@ -10,9 +10,11 @@ Write by manesec.
 
 ## 0x0 Some by pass word
 
-+ Space = `%0a`, `+`
++ Space = `%0a`, `+`, `/**/`
 + and = `&&`
 + or = `||`
+
+Note: Sometimes `-- - ` may not working, it may use `#`.
 
 ## 0x1 Bypass `only filtered at once`
 

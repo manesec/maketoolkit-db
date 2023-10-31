@@ -34,7 +34,7 @@ sudo vim /etc/samba/smb.conf
 
 ```config
 
-# Un-command it
+# Comment the following line
 # map to guest = bad user
 
 # add config

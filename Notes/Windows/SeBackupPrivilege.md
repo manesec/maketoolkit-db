@@ -50,6 +50,13 @@ sudo vim /etc/samba/smb.conf
 ```
 
 ```bash
+# add user
+sudo adduser smbuser
+
+# set password
+sudo smbpasswd -a smbuser
+
+# restart smb
 sudo service smb restart
 ```
 

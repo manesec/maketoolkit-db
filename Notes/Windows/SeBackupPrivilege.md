@@ -104,3 +104,5 @@ When Exploit ok, download ntds.dit in `C:\`.
 # Reference
 
 https://rootsecdev.medium.com/abusing-sebackupprivilege-cd5d1a88f992
+
+https://www.youtube.com/watch?v=IfCysW0Od8w&t=2610s

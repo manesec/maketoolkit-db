@@ -63,3 +63,11 @@ $ ls -la /bin/bash
 $ /bin/bash -p
 ```
 
+## Reference
+
+https://wiki.debian.org/SystemGroups#:~:text=staff%3A%20Allows%20users%20to%20add,bin%20with%20the%20same%20name).
+
+https://binaryregion.wordpress.com/2021/09/22/privilege-escalation-linux-staff-group/
+
+https://www.youtube.com/watch?v=GKq4cwBfH24&t=1993s
+

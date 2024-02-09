@@ -18,6 +18,8 @@ $1$manehack$rerzZaiHYZZXpZsGcJF8n1
 
 ```
 mane:sMH3ZTiGRR4L6:0:0:root:/root:/bin/bash
+
+# password is manemane
 mane:$1$manehack$rerzZaiHYZZXpZsGcJF8n1:0:0:root:/root:/bin/bash
 
 ```

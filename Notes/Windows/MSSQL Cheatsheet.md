@@ -26,3 +26,11 @@ PS C:\mane> sqlcmd -q "SELECT @@version"
 "SELECT name FROM master..sysdatabases;"
 
 ```
+
+## Check server link
+
+```
+EXEC sp_linkedservers;
+
+select * from openquery("WEB\CLIENTS", 'SELECT name FROM master..sysdatabases;')
+```

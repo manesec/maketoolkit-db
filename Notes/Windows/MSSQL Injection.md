@@ -4,9 +4,19 @@ some hit for mssql injection
 
 `LIMIT` function need to know the columns name.
 
+Ref: https://www.sqlservertutorial.net/sql-server-basics/sql-server-offset-fetch/
+
+```mssql
+
+# change OFFSET x ROWS
+SELECT username FROM mydb..mytable ORDER BY username OFFSET 1 ROWS FETCH NEXT 1 ROWS ONLY
+
+```
+
 ## Like mysql function name 
 
 `GROUP_CONCAT` --> `STRING_AGG`
+
 
 ## List Tables
 

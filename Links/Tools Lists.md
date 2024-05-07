@@ -2,10 +2,11 @@
 Collection by [manesec](https://github.com/manesec).
 
 ## Online Tools
-+ [miniPaint](https://viliusle.github.io/miniPaint/)
++ [MiniPaint](https://viliusle.github.io/miniPaint/)
 
 ## Misc
 + [文本隐水印](https://www.guofei.site/pictures_for_blog/app/text_watermark/v1.html)
++ [FontDrop - Online Font Viewer](https://fontdrop.info/)
 
 ## Javascript 
 

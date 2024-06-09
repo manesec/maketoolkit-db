@@ -34,3 +34,12 @@ EXEC sp_linkedservers;
 
 select * from openquery("WEB\CLIENTS", 'SELECT name FROM master..sysdatabases;')
 ```
+
+
+## Connect Server link
+
+```
+EXECUTE AS LOGIN  = 'sa';
+
+EXECUTE ('SELECT @@servername;') at [ZSM-SVRCSQL02] ;
+```

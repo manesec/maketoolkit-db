@@ -11,6 +11,8 @@ ssh user@remote_ip /sbin/tcpdump -i ens160 -U -s0 -w - | wireshark -k -i -
 
 # exclude ssh traffic
 ssh user@remote_ip /sbin/tcpdump -i ens160 -U -s0 -w - 'port not 22' | wireshark -k -i -
+
+ssh user@remote_ip tcpdump -i any -U -s0 -w - 'port not 22' | wireshark -k -i -
 ```
 
 And then wireshark will be open.

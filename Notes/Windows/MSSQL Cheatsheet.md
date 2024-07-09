@@ -19,11 +19,22 @@ PS C:\mane> Get-SqlInstance
 
 ```powershell
 PS C:\mane> sqlcmd -q "SELECT @@version"
+
+# login current user
+PS C:\mane> sqlcmd -S
+
+# user and password
+PS C:\mane> sqlcmd -S .\SQLEXPRESS -U xxx -P xxx
 ``
 
 ```sql
 # List Databases
-"SELECT name FROM master..sysdatabases;"
+SELECT name FROM master..sysdatabases;
+
+# List Tables
+SELECT name FROM master..sysobjects WHERE xtype = 'U';
+
+
 
 ```
 
@@ -39,6 +50,10 @@ With `PowerUPSql.ps1`, [CheatSheet](https://github.com/NetSPI/PowerUpSQL/wiki/Po
 
 ```
 Get-SQLInstanceLocal -Verbose
+```
+
+```
+osql -E -S "localhost\SQLEXPRESS" -Q "select * from master..sysservers" 
 ```
 
 

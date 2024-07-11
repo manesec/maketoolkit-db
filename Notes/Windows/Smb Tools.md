@@ -54,6 +54,36 @@ Config like this:
 
 Test it in `smbclient -L <IP>`.
 
+
+## smbclient download recursively
+
+```
+$ smbclient -U 'domain/user%password' '\\server\share'
+mask ""
+recurse ON
+prompt OFF
+cd 'path\to\remote\dir'
+lcd '~/path/to/download/to/'
+mget *
+
+```
+
+**Onelines**: 
+
+```
+$ smbclient '\\server\share' -N -c 'prompt OFF;recurse ON;cd 'path\to\directory\';lcd '~/path/to/download/to/';mget *'`
+```
+
+
+
+
+
+
+
+
+
+
 # Reference
 
 Ref: https://www.samba.org/samba/docs/current/man-html/smbcacls.1.html
+Ref: https://superuser.com/questions/856617/how-do-i-recursively-download-a-directory-using-smbclient

@@ -16,7 +16,6 @@ foreach($result in $results)
     Write-host "Object Cat. = "  $userEntry.objectCategory
     Write-host "servicePrincipalNames"        
 
-    $i=1
     foreach($SPN in $userEntry.servicePrincipalName)
     {
         Write-host "SPN   =      " $SPN    

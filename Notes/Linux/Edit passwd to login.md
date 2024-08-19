@@ -23,3 +23,17 @@ mane:sMH3ZTiGRR4L6:0:0:root:/root:/bin/bash
 mane:$1$manehack$rerzZaiHYZZXpZsGcJF8n1:0:0:root:/root:/bin/bash
 
 ```
+
+
+# More on Crypto on /etc/passwd
+```
+$1$	    MD5
+$2a$	Blowfish
+$5$	    SHA-256
+$6$	    SHA-512
+$sha1$	SHA1crypt
+$y$	    Yescrypt
+$gy$	Gost-yescrypt
+$7$	    Scrypt
+```
+

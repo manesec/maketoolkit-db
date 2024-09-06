@@ -10,6 +10,7 @@
 ## Search string in file 
 
 ```
+findstr /S /I /C:"password" "C:\Users\*"*.txt *.ini *.cfg *.config *.xml
 findstr /SIM /C:"password" *.txt *.ini *.cfg *.config *.xml
 findstr /SI /M "password" *.xml *.ini *.txt
 findstr /spin "password" *.*
@@ -18,6 +19,7 @@ findstr /si password *.xml
 findstr /si password *.ini
 
 select-string -Path C:\Users\htb-student\Documents\*.txt -Pattern password
+
 ```
 
 
@@ -73,3 +75,29 @@ IN `C:\Users\<user>\AppData\Local\Packages\Microsoft.MicrosoftStickyNotes_8wekyb
 using sqlite to open and read the notes.
 
 or `strings plum.sqlite-wal`
+
+## Other Interesting Files
+
+```
+%SYSTEMDRIVE%\pagefile.sys
+%WINDIR%\debug\NetSetup.log
+%WINDIR%\repair\sam
+%WINDIR%\repair\system
+%WINDIR%\repair\software, %WINDIR%\repair\security
+%WINDIR%\iis6.log
+%WINDIR%\system32\config\AppEvent.Evt
+%WINDIR%\system32\config\SecEvent.Evt
+%WINDIR%\system32\config\default.sav
+%WINDIR%\system32\config\security.sav
+%WINDIR%\system32\config\software.sav
+%WINDIR%\system32\config\system.sav
+%WINDIR%\system32\CCM\logs\*.log
+%USERPROFILE%\ntuser.dat
+%USERPROFILE%\LocalS~1\Tempor~1\Content.IE5\index.dat
+%WINDIR%\System32\drivers\etc\hosts
+C:\ProgramData\Configs\*
+C:\Program Files\Windows PowerShell\*
+
+C:\programData\*
+```
+

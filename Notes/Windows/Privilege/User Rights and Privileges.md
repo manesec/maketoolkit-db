@@ -50,5 +50,3 @@ From: [Appendix B - Privileged Accounts and Groups in Active Directory | Microso
 | [Shut down the system](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_41)                                           | SeShutdownPrivilege               |
 | [Synchronize directory service data](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_42)                             | SeSyncAgentPrivilege              |
 | [Take ownership of files or other objects](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_43)                       | SeTakeOwnershipPrivilege          |
-
-# 

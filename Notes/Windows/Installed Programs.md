@@ -1,6 +1,6 @@
 # Install Programs
 
-```
+```powershell
 cmd> wmic product get name
 
 PS> Get-WmiObject -Class Win32_Product |  select Name, Version
@@ -14,7 +14,7 @@ foreach($obj in $InstalledSoftware){write-host $obj.GetValue('DisplayName') -NoN
 PS> Get-WinEvent -ProviderName msiinstaller | where id -eq 1033 | select timecreated,message | FL *
 ```
 
-```
+```powershell
 $INSTALLED = Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* |  Select-Object DisplayName, DisplayVersion, InstallLocation
 $INSTALLED += Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName, DisplayVersion, InstallLocation
 $INSTALLED | ?{ $_.DisplayName -ne $null } | sort-object -Property DisplayName -Unique | Format-Table -AutoSize

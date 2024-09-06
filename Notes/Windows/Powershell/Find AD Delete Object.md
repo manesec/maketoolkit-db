@@ -13,8 +13,6 @@ Get-ADObject -Filter 'isDeleted -eq $True -and name -ne "Deleted Objects"'  -Inc
 
 ```
 
-
-
 ## Reference
 
 https://blog.netwrix.com/2021/11/30/active-directory-object-recovery-recycle-bin/
